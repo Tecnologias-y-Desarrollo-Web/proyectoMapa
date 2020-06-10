@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    
+    <title>Reserva</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Este es el formulario de Registro">
+    <meta name="keywords" content="HTML, CSS, JavaScript, registro">
+    <link rel="icon" href="imagenes/form.png" type="image/png" sizes="16x16">
+    <link rel="stylesheet" href="Estilo.css">
+    <link rel="stylesheet" href="grid.css">
+    <script src=""></script>
+</head>
+<body>
+    <header>
+        <strong></strong>
+    </header>
+    <nav>
+        <a href="Inicio.html">Inicio</a>
+    </nav>
+    <main>
+        <section>
+        <h1>Reserva</h1>
+        <form name="formulario" method="get" action="procesar.php">
+            <p>
+                <label for="listado">Producto:</label>
+                <select name="producto" id="listado">
+                    <option value="Ibuprofeno">Ibuprofeno</option>
+                    <option value="Aspirinas">Aspirinas</option>
+                    <option value="Vitamina C">Vitamina C</option>
+                    <option value="Paracetamol">Paracetamol</option>
+                </select>
+            </p>
+            <p>
+                <label>Cantidad: <input type="number" name="Cantidad" min="1" max="100"></label>
+
+            </p>
+            <div>
+                <button type="button" name="boton" id="boton" onclick='agregar()' >Agregar</button>
+            </div>
+            <div class="contenedor">
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+                <div>4</div>
+                <div>5</div>
+                <div>6</div>
+                <div>7</div>
+                <div>8</div>
+                <div>9</div>
+                <div>10</div>
+                <div>11</div>
+                <div>12</div>
+            </div>
+            <p>
+                <label>SubTotal: <input type="text" id="total" class="caja" disabled></label>
+                
+            </p>
+            <p>
+                <label>IVA: <input type="text" id="iva" class="caja" disabled></label>
+                
+            </p>
+            <p>
+                <label>Total: <input type="text" id="subtotal" class="caja" disabled></label>
+                
+            </p>
+            <div>
+                <script src="js/script.js"></script>
+            </div>
+            <p>
+                <button type="button" onclick="location.href='Mapa.html'">Siguiente</button>
+            </p>
+            
+        </form>
+        </section>
+    </main>
+    <footer>
+        &copy; Derechos Reservados 2020
+    </footer>
+</body>
+</html>    
