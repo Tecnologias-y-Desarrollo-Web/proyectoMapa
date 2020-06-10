@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    
+    <title>Formulario</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Este es el formulario de Registro">
+    <meta name="keywords" content="HTML, CSS, JavaScript, registro">
+    <link rel="icon" href="imagenes/form.png" type="image/png" sizes="16x16">
+    <link rel="stylesheet" href="Estilo.css">
+    <script src=""></script>
+</head>
+<body>
+    <header>
+        <strong>Registro del Usuario</strong>
+    </header>
+    <nav>
+        <a href="Inicio.html">Inicio</a>
+    </nav>
+    <main>
+        <section>
+        <h1>Registro</h1>
+        <form name="formulario" method="get" action="procesar.php">
+            <p>
+                <label>Usuario: <input type="text" name="usuario" placeholder="Ingrese su usuario"></label>
+            </p>
+            <p>
+                <label>Contrasena: <input type="password" name="contra" placeholder="Ingrese su contrasena"></label>
+
+            </p>
+            <p>
+                <a href="Ingreso.html">Aun no me he registrado. Iniciar Sesion</a>
+            </p>
+            <p>
+                <button type="button" onclick=" location.href='Reserva.html'">Registrarme</button>
+            </p>
+        </form>
+        </section>
+    </main>
+    <footer>
+        &copy; Derechos Reservados 2020
+    </footer>
+</body>
+</html>
