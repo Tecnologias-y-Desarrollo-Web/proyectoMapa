@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://unpkg.com/leaflet@1.0.2/dist/leaflet.js"></script>
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css" />
+
+ <style>
+  #map { 
+  width: 100%;
+  height: 600px; }
+ </style>
+ 
+ </head>
+  <body>
+   <div id="map"></div>
+   <p><label>Latitud: <input type="text" id="lati" value="" readonly></label></p>
+   <p><label>Longitud: <input type="text" id="longi" value="" readonly></label></p>
+    <script>
+        var map = L.map('map').setView([15.413083, -66.2136067], 3);
+        var markerActual; 
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+        var latitud;
+        var longitud;
+        navigator.geolocation.watchPosition
+        navigator.geolocation.getCurrentPosition(function (pos) {
+            latitud = pos.coords.latitude;
+            longitud = pos.coords.longitude;
+            
+            markerActual = L.marker([latitud, longitud], {draggable: false}).addTo(map);
+            markerActual.bindPopup("Esta es tu ubicacion<br>" + "Latitud: " + latitud + "<br>" + "Longitud: " + longitud).openPopup();
+            map.setView([latitud, longitud], 18);
+        })
+        var nuevoMarker;
+        function onMapClick(e) {
+            nuevoMarker = new L.marker(e.latlng, {draggable: true});
+            map.addLayer(nuevoMarker);
+            nuevoMarker.bindPopup("Esta es tu ubicacion<br>" + e.latlng).openPopup();
+            document.getElementById('lati').value = e.latlng.lat;
+            document.getElementById('longi').value = e.latlng.lng;
+        }
+        map.on('click', onMapClick);
+        map.removeLayer(nuevoMarker);
+ </script>
+</body>
+</html>
