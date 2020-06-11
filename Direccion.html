@@ -8,7 +8,14 @@
     <meta name="keywords" content="HTML, CSS, JavaScript, registro">
     <link rel="icon" href="imagenes/icon.png" type="image/png" sizes="16x16">
     <link rel="stylesheet" href="Estilo.css">
-    <script src=""></script>
+    <script src="https://unpkg.com/leaflet@1.0.2/dist/leaflet.js"></script>
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css" />
+    <style>
+        #map { 
+        width: 650px;
+        height: 450px; 
+        }
+       </style>
 </head>
 <body>
     <header>
@@ -21,13 +28,25 @@
         <section>
         <h1>Direccion</h1>
         <form name="formulario" method="set" action="procesar.php">
+            
             <p>
                 <label>Especifica tu lugar de residencia: </label>
-                <input class="puntero" >
             </p>
             <p>
                 <label>Ubicacion</label>
-                <a href="http://www.googlemaps"></a>
+                <div id="map"></div>
+                <p><label>Latitud: <input type="text" id="lati" value="" readonly></label></p>
+                <p><label>Longitud: <input type="text" id="longi" value="" readonly></label></p>
+                <script>
+                    var map = L.map('map').setView([15.413083, -66.2136067], 3);
+                    var markerActual; 
+            
+                    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                        attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                    }).addTo(map);
+                </script>
+                <script src="mapaInteractivo.js"></script>
+                <!--<a href="mapaLeafletInteractivo.html"> Pulse aquí para seleccionar su ubicación</a>-->
             </p>
             <p>
                 <button type="button" onclick=" location.href='Reserva.html'">Iniciar Sesion</button>
@@ -39,4 +58,4 @@
         &copy; Derechos Reservados 2020
     </footer>
 </body>
-</html> 
+</html>
