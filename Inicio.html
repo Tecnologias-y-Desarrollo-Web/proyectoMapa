@@ -1,8 +1,10 @@
+
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     
-    <title>Formulario</title>
+    <title>Inicio</title>
     <meta charset="utf-8">
     <meta name="description" content="Este es el formulario de Registro">
     <meta name="keywords" content="HTML, CSS, JavaScript, registro">
@@ -12,30 +14,39 @@
 </head>
 <body>
     <header>
-        <strong>Registro del Usuario</strong>
+        <div class="logo">
+        <h1 class="logo-texto">
+        Farmacia
+        </h1>
+    </div>
     </header>
     <nav>
-        <a href="Inicio.html">Inicio</a>
+        <ul class="nav">
+            <li><a href="#">Inicio</a></li>
+        </ul>
     </nav>
     <main>
-        <section>
-        <h1>Registro</h1>
-        <form name="formulario" method="get" action="procesar.php">
-            <p>
-                <label>Usuario: <input type="text" name="usuario" placeholder="Ingrese su usuario"></label>
-            </p>
-            <p>
-                <label>Contrasena: <input type="password" name="contra" placeholder="Ingrese su contrasena"></label>
+        <div class="caja">
+            
+                <h2>Registro</h2>
+                <form name="formulario" method="post" onsubmit="return validar();" action="procesar.php" autocomplete="off">
+                    <div class="cuadroE"> 
+                <label>Usuario</label>
+                <input type="text" name="usuario" placeholder="Ingrese nombre del usuario" required="" >
+            
 
-            </p>
-            <p>
-                <a href="Ingreso.html">Aun no me he registrado. Iniciar Sesion</a>
-            </p>
-            <p>
-                <button type="button" onclick=" location.href='Reserva.html'">Registrarme</button>
-            </p>
+            </div>
+            <div class="cuadroE"> 
+                <label>Contrasena </label>
+                <input type="password" name="contra" required="" placeholder="Ingrese su contrasena">
+            </div>
+
+            
+            <button type="button" onclick=" location.href='Reserva.html'">Registrarme</button>
+            <a href="Registro.html"><h4>Aun no me he registrado. Iniciar Sesion</h4></a>
+            
         </form>
-        </section>
+        </div>
     </main>
     <footer>
         &copy; Derechos Reservados 2020
