@@ -52,7 +52,7 @@ header{
     
     position: relative;
     background: #FFA07A;
-    height: 300px;
+    height: 200px;
     font-size: 30px;
     width: 100%;
     text-align: center;
@@ -70,7 +70,7 @@ header .logo {
 header .logo-texto {
     margin-top:50px ;
     color: #ffffff;
-    font-size: 40px;
+    font-size: 80px;
     margin-left: 450px;
 }
 
