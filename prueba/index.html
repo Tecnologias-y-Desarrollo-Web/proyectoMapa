@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="Js/jquery-3.5.1.js"></script>
+    <script src="Js/users.js"></script>
+    <script src="app.js"></script>
+</head>
+<body>
+    <form action="" id="form"> 
+        <input type="text" name="name" id="name">
+        <input type="text" name="age" id="age">
+        <button type="button" onclick="getData()"> Enviar</button>
+    </form>
+    <h1>Buscar Datos en una tabla</h1>
+    <form accept-charset="utf-8" method="POST">
+        <input type="text" name="search" id="search" value="" 
+        placeholder="Buscar" onKeyUp="searchUser();">
+    </form>
+    <div class="datagrid">
+        <table>
+            <thead>
+                <tr class="titulo">
+                    <td>NOMBRE</td>
+                    <td>EDAD</td>
+                </tr>
+            </thead>
+            <tbody id="resultSearch">
+
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
+
+<script>
+    //se ejecuta auomaticamnete
+    $().ready(function(){
+        $("#search").focus();
+        searchUser();
+    });
+</script>
