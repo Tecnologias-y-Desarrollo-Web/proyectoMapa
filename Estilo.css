@@ -9,6 +9,7 @@
 }
 
 #contenedor {
+    margin-left: 200px;
     position: relative;
 	background-color: pink;
     margin: 0.5 em auto;
@@ -56,6 +57,13 @@ body {
     margin-top: 0px;
 }
 
+.logo-especial2{
+    text-align: center;
+    color: #333333;
+    background: #ffffff;
+    font-size: 20px;
+    border: 1px solid #333333;
+}
 
 
 .menu .logo {
@@ -64,7 +72,8 @@ body {
 }
 
 #header .menu .enlaces {
-    position: absolute;
+    margin-left:200px;
+    position: relative;
     justify-content: space-around;
 }
 
@@ -105,6 +114,7 @@ body {
 
 #header .logo:hover{
     background: #ffffff;
+    color: #333333;
 }
 
 @media screen and(max-width: 700px){
@@ -139,7 +149,7 @@ body {
 }
 
 #header .menu .enlaces a{
-    color: #ffffff;
+    color: #f2f2f2;
     text-decoration:none;
     display: inline-block;
     padding: 1em;
@@ -149,7 +159,7 @@ body {
 }
 
 .menu .enlaces i{
-    margin-right: 5px;
+    margin-right: 50%;
 }
 
 
@@ -161,16 +171,13 @@ body {
 main{
     width: 100%;
     max-width: 1000px;
-    margin: 20px auto;
-    height: 900px;
+    margin: 70px auto;
+    height: 1100px;
     padding: 40px;
     z-index: -500px;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, .75);
 }
 
-article{
-
-}
 main article h1{
 
     position: relative;
@@ -211,8 +218,8 @@ main article .caja p{
     background: #572364;
 }
 
-.caja {
-    margin-top: 70px;
+main .caja {
+    margin-top: 200px;
     top: 70px;
     left: 50%;
     transform: translate(-50%,-50%);
@@ -225,6 +232,22 @@ main article .caja p{
     box-shadow: 0 15px 25px rgba(0, 0, 0, .5);
     border-radius: 10px;
 }
+
+main .caja2 {
+    margin-top: 200px;
+    top: 250px;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 400px;
+    padding: 40px;
+    margin: 50px auto;
+    margin-left: 30px;
+    background: rgba(0, 0, 0, .8); 
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, .5);
+    border-radius: 10px;
+}
+
 .caja h2 {
     margin: 0 0 30px;
     padding: 0;
@@ -278,7 +301,8 @@ main article .caja p{
     border-radius: 5px;
     cursor: pointer;
     align-self: center;
-    margin-left: 110px;
+    margin-left: 0px;
+    align-items: center;
 
 }
 
@@ -331,6 +355,7 @@ h4{
 .contenedor > div{
     
     display: block;
+    
     padding: 20px;
     color: #000000;
     background-color: antiquewhite;
@@ -351,6 +376,9 @@ footer {
 .resultado{
     position: relative;
     border: 1px solid;
-    height: 30px;
+    height: 60px;
     width: 300px;
+    justify-content: center;
+    float: right;
+    font-size: 20px;
 }
