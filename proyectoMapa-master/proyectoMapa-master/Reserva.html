@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    
+    <title>Reserva</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Este es el formulario de Registro">
+    <meta name="keywords" content="HTML, CSS, JavaScript, registro">
+    <link rel="icon" href="imagenes/icon.png" type="image/png" sizes="16x16">
+    <link rel="stylesheet" href="Estilo.css">
+    <script src="https://unpkg.com/leaflet@1.0.2/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css" />
+    <script src="js/jquery-3.5.1.js"></script>
+    <script src="js/usuarios.js"></script>
+    <script src="app.js"></script>
+    <style>
+        #map { 
+        width: 650px;
+        height: 450px; 
+        }
+       </style>
+</head>
+<body onload="Cargar()">
+    <section>
+    <h1>Bienvenido Usuario</h1>
+    <form name="f2" method="POST">
+    <p><label>Nombre: <input type="text" id="nom" readonly></label></p>
+    <p><label>Apellido: <input type="text" id="ape" readonly></label></p>
+    <p>Ubicacion</p>
+    <p><label>Latitud: <input type="text" id="lati" readonly></label></p>
+    <p><label>Longitud: <input type="text" id="longi" readonly></label></p>
+    <div id="map"></div>  
+     <script>
+        var lat = document.getElementById('lati').value
+        var lon = document.getElementById('longi').value
+        var map = L.map('map').setView([lat, lon], 3);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+        var markerPos = L.marker([lat, lon], {draggable: false}).addTo(map);
+            markerPos.bindPopup("Escogiste esta ubicación<br>").openPopup();
+    </script>
+    <script src="mapa.js"></script>
+    </form>
+    </section>
+    <footer>
+        &copy; Derechos Reservados 2020
+    </footer>
+</body>
+</html>    

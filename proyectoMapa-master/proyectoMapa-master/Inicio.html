@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    
+    <title>Formulario</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Este es el formulario de Registro">
+    <meta name="keywords" content="HTML, CSS, JavaScript, registro">
+    <link rel="icon" href="imagenes/icon.png" type="image/png" sizes="16x16">
+    <link rel="stylesheet" href="Estilo.css">
+    <script src="js/jquery-3.5.1.js"></script>
+    <script src="js/usuarios.js"></script>
+    <script src="app.js"></script>
+    <script src="https://unpkg.com/leaflet@1.0.2/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css" />
+    <style>
+        #map { 
+        width: 650px;
+        height: 450px; 
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <strong>Ingreso</strong>
+    </header>
+    <main>
+        <section>
+        <h1>Datos del usuario</h1>
+        <form name="formulario" method="POST" action="">
+            <p>
+                <label>Usuario: <input type="text" id="usuario" name="usuario" placeholder="Ingrese su usuario"></label>
+            </p>
+            <p>
+                <label>Contrasena: <input type="password" id="contra" name="contra" placeholder="Ingrese su contrasena"></label>
+
+            </p>
+            <p>
+                <button type="button" onclick="Validar()">Ingresar</button>
+                <button type="button" ><a href="Registro.html">Registrate</a></button>
+            </p>
+        </form>
+        </section>
+    </main>
+    <footer>
+        &copy; Derechos Reservados 2020
+    </footer>
+</body>
+</html>
