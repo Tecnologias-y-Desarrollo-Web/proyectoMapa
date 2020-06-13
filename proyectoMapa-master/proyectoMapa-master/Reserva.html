@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     
-    <title>Mapa</title>
+    <title>Reserva</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
@@ -11,22 +11,26 @@
     <link rel="icon" href="imagenes/icon.png" type="image/png" sizes="16x16">
     <link rel="stylesheet" href="Estilo.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
-    <script src="https://unpkg.com/leaflet@1.0.2/dist/leaflet.js"></script>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css" />
-    <script src="js/jquery-3.5.1.js"></script>
-    <script src="js/usuarios.js"></script>
-    <script src="app.js"></script>
+    
+    <!--Scroll reveal-->
+    <script  src = " https://unpkg.com/scrollreveal " > </script>
+    <script type="text/javascript">
+        var nav= document.getElementById('menu');
+        window.onscroll= function(){
 
-    <style>
-        #map { 
-        width: 650px;
-        height: 450px; 
+        if(window.pageYOffset >100){
+            nav.style.position = "fixed";
+            nav.style.top = 0;
+        
+        }else{
+            nav.style.position ="absolute";
+            nav.style.top=100;
+        
         }
-    </style>
-
+    } 
+</script>
 </head>
-
-<body onload="Cargar()">
+<body>
     <header id="header">
 
         <div class="logo2">
@@ -61,50 +65,83 @@
     
     <main>
         <article>
-        <div >
-        <p>   
-            <hr>    
-             <h2>Bienvenido Usuario</h2>
-            <br>
+        <div>
+                <p>
         <hr>
-        <form name="f2" method="POST">
-            <p><label>Nombre: <input type="text" id="nom" readonly></label></p>
-            <p><label>Apellido: <input type="text" id="ape" readonly></label></p>
-            <p>Ubicacion</p>
-            <p><label>Latitud: <input type="text" id="lati" readonly></label></p>
-            <p><label>Longitud: <input type="text" id="longi" readonly></label></p>
-            <div id="map"></div>  
-             <script>
-                var lat = document.getElementById('lati').value
-                var lon = document.getElementById('longi').value
-                var map = L.map('map').setView([lat, lon], 3);
-        
-                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-                }).addTo(map);
-                var markerPos = L.marker([lat, lon], {draggable: false}).addTo(map);
-                    markerPos.bindPopup("Escogiste esta ubicación<br>").openPopup();
-            </script>
-            <script src="mapa.js"></script>
-        
+        <h2>Reserva</h2>
+        <br>
+        <hr>
+        <br>
+        <form name="f2" method="POST" action="">
+            <p>
+                <label for="listado">Producto:</label>
+                <select name="producto" id="listado">
+                    <option value="Ibuprofeno">Ibuprofeno</option>
+                    <option value="Aspirinas">Aspirinas</option>
+                    <option value="Vitamina C">Vitamina C</option>
+                    <option value="Paracetamol">Paracetamol</option>
+                </select>
+            </p>
+            <br>
+            <p>
+                <label for="cantidad">Cantidad:</label> 
+                <input type="number" name="Cantidad" id="cantidad" min="1" max="100" required="">
+
+            </p>
+            <br>
+            <div>
+                <button type="submit" name="boton" id="boton" onclick='agregar()' >Agregar</button>
+            </div>
+            <div class="contenedor">
+                <div class="titulos">Producto</div>
+                <div class="titulos">Cantidad</div>
+                <div class="titulos">Precio Unitario</div>
+                <div class="titulos">Subtotal</div>
+                <div>Ibuprofeno</div>
+                <div>6</div>
+                <div>7.60</div>
+                <div>8.00</div>
+                <div>Paracetamol</div>
+                <div>6</div>
+                <div>7.60</div>
+                <div>8.00</div>
+                <div>Vitamina C</div>
+                <div>6</div>
+                <div>7.60</div>
+                <div>8.00</div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+ 
+            </div>
+            <br>
+            <div class="resultado">
+                <label>IVA: </label><input type="text" id="iva" readonly>
                 <br>
-                <a href='Reserva.html'" class="boton">Anterior</a>
+                <label>Total: </label><input type="text" id="subtotal"  readonly>
                 <br>
-                <span id="lista">
-                <a href='ordenTerminada.html'" class="boton" >Siguiente<a>
-                    <br>
-                <a href='Inicio.html'" class="boton" >Salir</a>
-                </span>
+            </div>
+             <br>
+             <br>
+             <a href='Mapa.html'" class="boton">Siguiente<a>
+    
         </form>
-        </p>
-        </div>
-    </article>
-    </main>
-    <footer>
-        &copy; Derechos Reservados 2020
-    </footer>
-    <script src="js/headroom.min.js"></script>
-    <script src="js/menu.js"></script>
-    <script src="js/jquery.min.js"></script>
+    </p>
+    </div>
+</article>
+
+
+</main>
+<footer>
+    &copy; Derechos Reservados 2020
+</footer>
+<script src="js/headroom.min.js"></script>
+<script src="js/menu.js"></script>
+<script src="js/jquery.min.js"></script>
 </body>
-</html>  
+</html> 
