@@ -11,21 +11,11 @@
     <link rel="icon" href="imagenes/icon.png" type="image/png" sizes="16x16">
     <link rel="stylesheet" href="Estilo.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
-    <script src="js/jquery-3.5.1.js"></script>
-    <script src="js/usuarios.js"></script>
-    <script src="app.js"></script>
-    <script src="https://unpkg.com/leaflet@1.0.2/dist/leaflet.js"></script>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css" />
+
     
-    <style>
-        #img{
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-    }
-    </style>
-   
     <script type="text/javascript">
+        
+
         var nav= document.getElementById('menu');
         window.onscroll= function(){
 
@@ -38,8 +28,11 @@
             nav.style.top=100;
         
         }
-    } 
-</script>
+    }
+    
+    </script>
+
+
 </head>
 <body>
     <header id="header">
@@ -64,8 +57,8 @@
 
             </div>
             <div class="enlaces" id="enlaces">
-                <a href="Inicio.html"><i class="fa fa-home" aria-hidden="true"></i>Inicio</a>
-                <a href="#nos"><i class="fa fa-users" aria-hidden="true"></i>Nosotros</a>
+                <a href="Inicio.html"><i class="fa fa-home" aria-hidden="true"></i> Inicio</a>
+                <a href="Nosotros.html"><i class="fa fa-users" aria-hidden="true"></i> Nosotros</a>
               </div>
             </div>
         </nav>
@@ -76,41 +69,42 @@
     
     <main>
         <article>
-        <div class="caja">
-        <p>
-            <h2>Registro</h2>
-        <form name="formulario" method="POST"  action="" autocomplete="off">
-                    <div class="cuadroE"> 
-                <label for="usuario">Usuario</label>
-                <input type="text" name="usuario" id="usuario" placeholder="Ingrese nombre del usuario" required="" >
-            
+        <div >
+        <p>   
+            <hr>    
+             <h2>Reserva</h2>
+            <br>
+        <hr>
+        <form name="formulario" method="set" action="procesar.php">
+            <br>
 
-            </div>
-            <div class="cuadroE"> 
-                <label for="contra">Contraseña </label>
-                <input type="password" name="contra" id="contra"  placeholder="Ingrese su contraseña" required="" >
-            </div>
+            <p>
+                <label>Pedido: <input class="ingreso" readonly></label> 
+            </p>
+            <br>
+            <p>
+                <label>Telefono: <input class="ingreso" readonly></label>
+            </p>
+            <br>
+            <p>
+                <label>Direccion: <input class="ingreso" readonly></label>
+
+            </p>
+        
+        <br>
 
             
-            <button type="submit" onclick=" location.href='Reserva.html'" onclick="Validar()">Registrarme</button>
-            <a href="Registro.html"><h4>Aun no me he registrado. Iniciar Sesion</h4></a>
-            
+                <a href='Reserva.html'" class="boton">Anterior</a>
+                <br>
+                <span id="lista">
+                <a href='ordenTerminada.html'" class="boton" >Siguiente<a>
+                    <br>
+                <a href='Inicio.html'" class="boton" >Salir</a>
+                </span>
         </form>
         </p>
         </div>
     </article>
-        <hr>
-        <h1 id="nos">Nosotros</h1>
-        <br>
-        <p>
-            Somos una organizacion que satisface las necesidades de nuestros clientes ofreciendo medicamentos, productos y servicios para el cuidado integral de la salud, y productos de conveniencia relacionados con farmacias
-            a traves de nuestro servicio a domicilio.
-        </p>
-        <br>
-        <figcaption>
-            <img id="img" src="imagenes/entrega.png" height="400px">
-        </figcaption>
-    
     </main>
     <footer>
         &copy; Derechos Reservados 2020
@@ -119,4 +113,4 @@
     <script src="js/menu.js"></script>
     <script src="js/jquery.min.js"></script>
 </body>
-</html>
+</html>   
